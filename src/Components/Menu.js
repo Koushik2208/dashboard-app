@@ -1,9 +1,12 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
 import { RiMenuFold4Fill } from "react-icons/ri";
 import '../Styles/globals.css';
 import '../Styles/components/menu.css';
 import { DropdownComponent } from "./DropdownComponent";
+import { useDispatch } from "react-redux";
+import { incrementByAmount } from "../Redux/slices/exampleSlice";
+
 const Menu = () => {
     const [open, setOpen] = useState(false);
 
@@ -11,6 +14,12 @@ const Menu = () => {
         setOpen(!open);
     }
 
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        // dispatch initial value from api to redux
+        dispatch(incrementByAmount(10))
+    },[])
     return (
         <div>
             <div className="menu-top">

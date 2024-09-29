@@ -1,0 +1,61 @@
+.menu-top {
+    height: 50px;
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.menu {
+    position: fixed;
+    top: 50px;
+    left: 0;
+    width: 250px;
+    background-color: #fff;
+    height: calc(100vh - 50px);
+    border-right: 1px solid #ccc;
+    overflow-y: auto;
+    padding: 20px 0px;
+    transform: translateX(-100%);
+    transition: all 0.7s ease;
+}
+
+.menu.open {
+    transform: translateX(0);
+}
+
+.child {
+    margin-left: 0px;
+    transition: all 0.7s ease;
+}
+
+.child.open {
+    margin-left: 250px;
+}
+
+.menu .accordion-flush>.accordion-item>.accordion-header .accordion-button{
+    background-color: #fff;
+    color: #000;
+    border: none;
+    box-shadow: none;
+}
+
+.menu .accordion-body{
+    padding: 0px 20px;
+}
+
+.menu .accordion-body>ul{
+    list-style: none;
+    padding-left: 20px;
+}
+
+.menu .accordion-body>ul>li{
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.menu .accordion-body>ul>li.active{
+    color: blue;
+}
